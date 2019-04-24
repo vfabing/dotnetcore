@@ -1,14 +1,15 @@
-Prérequis :
+# Prérequis
 - `git clone https://github.com/vfabing/dotnetcore.git`
 - Vérifier que la bonne souscription Azure est bien sélectionnée (`az account show`)
 - Pousser la version non modifié de l'image dotnetcore sur ACR
 
+# Création webapp
 - Création webapp P1v2 avec l'image `appsvc/dotnetcore`  
 (30s ~ 1mn30)  
 - Montrer : https://github.com/Azure-App-Service/dotnetcore/
-
 - Activation `Continuous Deployment`
 
+# Mise à jour nouvelle version
 - Aller dans le dossier `2.1.1`  
 - Ouvrir VS Code  
 - Modifier le fichier `hostingstart.html`  
