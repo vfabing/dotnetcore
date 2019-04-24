@@ -1,21 +1,14 @@
 FROM microsoft/dotnet:2.1.1-aspnetcore-runtime
 LABEL maintainer="Azure App Services Container Images <appsvc-images@microsoft.com>"
 
-COPY bin.zip /tmp
+RUN mkdir -p /defaulthome/hostingstart
+
+COPY bin /defaulthome/hostingstart
 COPY init_container.sh /bin/
 COPY hostingstart.html /home/site/wwwroot/
-COPY sshd_config /etc/ssh/
 
-RUN apt-get update \
-  && apt-get install -y apt-utils --no-install-recommends \
-  && apt-get install -y unzip --no-install-recommends \
-  && mkdir -p /defaulthome/hostingstart \ 
-  && unzip -q -o /tmp/bin.zip -d /defaulthome/hostingstart \
-  && rm /tmp/bin.zip \
-  && echo "root:Docker!" | chpasswd \
+RUN echo "root:Docker!" | chpasswd \
   && echo "cd /home" >> /etc/bash.bashrc \
-  && apt update \
-  && apt install -y --no-install-recommends openssh-server vim curl wget tcptraceroute \
   && chmod 755 /bin/init_container.sh \
   && mkdir -p /home/LogFiles/
 
