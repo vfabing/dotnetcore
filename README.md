@@ -17,3 +17,4 @@
 
 - `az acr build --registry acrvfa --image dotnetcore .`  
 (< 1mn)
+- En profiter pour montrer la partie auto-scale, les accès SSH, KUDU, tout ça :)
