@@ -4,9 +4,8 @@
 - Pousser la version non modifié de l'image dotnetcore sur ACR
 
 # Création webapp
-- Création webapp P1v2 avec l'image `appsvc/dotnetcore`  
+- Création webapp `web-gab2019` P1v2 avec l'image `dotnetcore`  
 (30s ~ 1mn30)  
-- Montrer : https://github.com/Azure-App-Service/dotnetcore/
 - Activation `Continuous Deployment`
 
 # Mise à jour nouvelle version
@@ -17,4 +16,3 @@
 
 - `az acr build --registry acrvfa --image dotnetcore .`  
 (< 1mn)
-- En profiter pour montrer la partie auto-scale, les accès SSH, KUDU, tout ça :)
